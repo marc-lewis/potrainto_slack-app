@@ -1,2 +1,10 @@
 # potrainto
-Social, Mobile, Locomotive
+Social, Mobile, Locomotive.
+
+# TOC
+
+# Getting Started
+
+# Building Potrainto
+
+# Controlling Potrainto
