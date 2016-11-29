@@ -4,8 +4,9 @@ const router = express.Router();
 router.use('/', (req, res) => {
 
     // authenticate post request through slack stuff
-    // logging
-    res.send('make the potrainto do something');
+    // log something
+    // use a regex to extract the verbs passed to potrainto
+    res.send('Choo Choo!');
 
 });
 

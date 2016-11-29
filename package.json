@@ -9,7 +9,9 @@
     "express-handlebars": "^3.0.0",
     "winston": "^2.3.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "request": "^2.79.0"
+  },
   "scripts": {
     "test": "/potrainto help"
   },
