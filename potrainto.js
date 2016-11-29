@@ -1,37 +1,33 @@
 // set app dependencies
 const express = require('express');
 require('dotenv').config();
-
-// logger
-
-// web routes
-    // public (set route gropus)
-app.get('/', function (req, res) {
+const app = express();
 
 
-});
-    // admin (set route groups)
-app.get('/admin', function (req, res) {
+/**
+ * Routes
+ */
 
+// public
+const index = require('./routes/index');
+app.use('/', index);
 
+// admin (set route groups)
+const admin = require('./routes/admin');
+app.use('/admin', admin);
 
-});
-
-    // auth routes for slack integration
-app.get('/slack_button', function (req, res) {
-
-
-
-});
-
+// auth routes for slack integration
+const auth = require('./routes/auth');
+app.use('/auth', auth);
 
 // potrainto commands
-app.post('/potrainto', function (req, res) {
+const potrainto = require('./routes/potrainto');
+app.use('/potrainto', potrainto);
 
-    // if jag has sent a request send back something humerous
-    // if igo has sent a request just sent back 'Error 707 - Risky Business'
 
-});
-
-// listen for traffic (will need to be SSL when live)
+/**
+ * Listen on w/e port
+ * TODO: SSL certs
+ */
 app.listen(1337);
+console.log('Potrainto mainframe operation on  port 1337');
