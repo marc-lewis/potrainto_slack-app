@@ -36,6 +36,7 @@ router.get('/', (req, res) => {
                 } else {
 
                     console.log(error.message);
+                    res.redirict('/');
 
                 }
 
