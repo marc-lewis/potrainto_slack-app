@@ -12,7 +12,7 @@ class Authenticator {
      */
     static _checkUser (user) {
 
-        if (user === 'jagmitg') {
+        if (user === process.env.SLACK_USER) {
 
             return false;
 

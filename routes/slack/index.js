@@ -12,29 +12,23 @@ router.post('/', (req, res) => {
     // check the headers for a slack request
     if (req.headers['user-agent'].includes('Slackbot')) {
 
-        // if the request is slack
+        // if the request is a valid slack cred
         if (Authenticator.validate(req.body)) {
 
             res.send('Choo choo!');
             console.log(req.body);
 
         // if not slack
-        } else {
-
-            res.sendStatus(451);
-
         }
 
         // if valid send off for command parsing
 
 
         // TODO: check for a secret URL param to control the train outside of slack
-    // otherwise
-    } else {
-
-        res.sendStatus(451);
-
     }
+
+    // otherwise
+    res.sendStatus(451);
 
 });
 
