@@ -1,7 +1,8 @@
-services:
-  potrainto:
-    build: .
-    ports:
-      - "80:80"
-    volumes:
-      - ./app:/var/www
+potrainto:
+  build: .
+  ports:
+    - "80:80"
+  volumes:
+    - ./app:/var/www
+  container_name:
+      potrainto
