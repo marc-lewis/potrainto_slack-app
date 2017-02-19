@@ -1,4 +1,4 @@
 #!/bin/sh
 
 nginx
-pm2  start processes.json --no-daemon
+pm2 start processes.json --no-daemon

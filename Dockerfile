@@ -18,4 +18,4 @@ RUN npm i -g pm2
 # start nginx & pm2 as a process so docker doesn't exit
 ADD start.sh /start.sh
 RUN chmod 755 /start.sh
-CMD ["./start.sh"]
+CMD ["/start.sh"]
