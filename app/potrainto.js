@@ -28,19 +28,19 @@ app.set('view engine', 'handlebars');
  * Routes
  */
 // public
-const main = require('./routes/main');
+const main = require('./controllers/main');
 app.use('/', main);
 
 // admin (set route groups)
-const admin = require('./routes/admin');
+const admin = require('./controllers/admin');
 app.use('/admin', admin);
 
-// auth routes for slack integration
-const auth = require('./routes/auth');
+// auth controllers for slack integration
+const auth = require('./controllers/auth');
 app.use('/auth', auth);
 
 // slack commands
-const slack = require('./routes/slack/index');
+const slack = require('./controllers/slack/index');
 app.use('/slack', slack);
 
 

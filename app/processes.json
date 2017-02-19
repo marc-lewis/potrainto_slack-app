@@ -1,0 +1,24 @@
+{
+
+    "apps" : [
+
+        {
+
+            "name"        : "potrainto",
+            "script"      : "potrainto.js",
+            "watch"       : true,
+            "watch_options": {
+
+                "usePolling": true
+
+            },
+            "error_file": "./logs/pm2_error.log",
+            "out_file": "./logs/pm2_out_file.log",
+            "pid_file": "./logs/pm2_pid_file.log",
+            "log_date_format" : "YYYY-MM-DD HH:mm Z"
+
+        }
+
+    ]
+
+}
