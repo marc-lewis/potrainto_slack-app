@@ -12,6 +12,7 @@
                 "usePolling": true
 
             },
+            "ignoreWatch" : [ "./node_modules", "./.tmp", "./logs"],
             "error_file": "./logs/pm2_error.log",
             "out_file": "./logs/pm2_out_file.log",
             "pid_file": "./logs/pm2_pid_file.log",

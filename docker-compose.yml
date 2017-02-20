@@ -4,5 +4,3 @@ potrainto:
     - "80:80"
   volumes:
     - ./app:/var/www
-  container_name:
-      potrainto
