@@ -24,6 +24,9 @@ Social, Mobile, Locomotive.
 - Broadcast motivational messages from noteworthy celebrities (DJ Khaled, Leonard Nemoy, George Takei, https://www.youtube.com/watch?v=KxGRhd_iWuE, https://www.youtube.com/watch?v=bavZbQHbuOk) to make sure we are 'geared up' for work
 - Play the coca-cola advert every day in the run up to christmas and deliver chocolates
 - Go 'Ho Ho Ho', every few hours in the lead up to christmas
+- At 9:30 potrainto starts deliveries and announces them
+- At 5:30 potrainto stops deliveries and announces that it's home time
+- After 5:30 potrainto will go through each person in the queue and ask them if they want it to be delivered (queue skip), can timeout after two minutes and go to the next person in the queue
 
 # Todo
 
