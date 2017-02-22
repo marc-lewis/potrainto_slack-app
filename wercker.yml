@@ -1,25 +1,58 @@
 build:
 
   box:
+
     id: marclewis/ubuntu_nginx_node
     username: $DOCKER_HUB_USERNAME
     password: $DOCKER_HUB_PASSWORD
     tag: latest
 
-  steps:
-#     A step that executes `npm install` command
-     - npm-install
-#     A step that executes `gulp build`
-#     - gulp-build
-#     A step that executes `gulp test`
-#     - gulp-test
-#     A step that executes `npm test` command
-#     - npm-test
+#   Any Connected containers
+#  services:
+#    - mongodb
+#    - nginx
 
-#     A custom script step, name value is used in the UI
-#     and the code value contains the command that get executed
-#    - script:
-#        name: echo nodejs information
-#        code: |
-#          echo "node version $(node -v) running"
-#          echo "npm version $(npm -v) running"
+  steps:
+
+    - script:
+
+      name: Remove the default Nginx configuration file
+      code: rm -v /etc/nginx/nginx.conf
+
+    - script:
+
+      name: Add the correct Nginx configuration file
+      code: cp nginx.conf /etc/nginx/
+
+    - script:
+
+      name: Add the app to /var/www for nginx
+      code: cp ./app /var/www
+
+    - script:
+
+      name: Change the working directory
+      code: cd /var/www
+
+    - script:
+
+      name: Install dependencies
+      code: npm install
+
+    - script:
+
+      name: Install pm2 globall
+      code: npm install pm2 -g
+
+
+
+deploy:
+
+  dockerhub:
+
+    - internal/docker-push:
+
+      username: $DOCKER_HUB_USERNAME
+      password: $DOCKER_HUB_PASSWORD
+      repository: marclewis/potrainto
+
