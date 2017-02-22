@@ -32,7 +32,7 @@ build:
     - script:
 
       name: Change the working directory
-      code: cd /var/www
+      cwd: /var/www
 
     - script:
 
