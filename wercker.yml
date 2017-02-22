@@ -27,7 +27,7 @@ build:
     - script:
 
       name: Add the app to /var/www for nginx
-      code: cp app /var/www
+      code: cp -r ./app /var/www
 
     - script:
 
