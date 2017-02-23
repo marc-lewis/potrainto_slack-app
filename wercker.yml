@@ -32,11 +32,11 @@ build:
     - script:
 
       name: install npm dependenies
-      code: cd /var/www && npm install
+      code: cd $WERCKER_ROUTE/var/www && npm install
 
     - script:
 
-      name: Install pm2 globall
+      name: Install pm2 globally
       code: npm install pm2 -g
 
 
