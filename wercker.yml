@@ -32,8 +32,7 @@ build:
     - script:
 
       name: install npm dependenies
-      cwd: $WERCKER_ROOT/var/www
-      code: npm install
+      code: cd /var/www && npm install
 
     - script:
 
