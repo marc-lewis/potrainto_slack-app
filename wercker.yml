@@ -29,10 +29,10 @@ build:
       name: Add the app to /var/www for nginx
       code: cp -r ./app /var/www
 
-    - script:
+  steps:
 
-      name: Change the working directory
-      cwd: /var/www
+    # Change the working directory for npm install
+    cwd: /var/www
 
     - script:
 
