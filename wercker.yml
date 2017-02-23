@@ -17,22 +17,23 @@ build:
     - script:
 
       name: Remove the default Nginx configuration file
-      code: rm -v /etc/nginx/nginx.conf
+      code: rm -v $WERCKER_ROOT/etc/nginx/nginx.conf
 
     - script:
 
       name: Add the correct Nginx configuration file
-      code: cp nginx.conf /etc/nginx/
+      code: cp nginx.conf $WERCKER_ROOT/etc/nginx/
 
     - script:
 
       name: Add the app to /var/www for nginx
-      code: cp -r ./app /var/www
+      code: cp -r ./app $WERCKER_ROOT/var/www
 
     - npm-install:
 
       name: install npm dependenies
-      cwd: /var/www
+      cwd: $WERCKER_ROOT/var/www
+      code: npm install
 
     - script:
 
