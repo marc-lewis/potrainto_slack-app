@@ -17,12 +17,12 @@ build:
     - script:
 
       name: Remove the default Nginx configuration file
-      code: rm -v $WERCKER_ROOT/etc/nginx/nginx.conf
+      code: rm -v /etc/nginx/nginx.conf
 
     - script:
 
       name: Add the correct Nginx configuration file
-      code: cp nginx.conf $WERCKER_ROOT/etc/nginx/
+      code: cp nginx.conf /etc/nginx/
 
     - script:
 
