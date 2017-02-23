@@ -27,9 +27,9 @@ build:
     - script:
 
       name: Add the app to /var/www for nginx
-      code: cp -r ./app $WERCKER_ROOT/var/www
+      code: cp -r ./app /var/www
 
-    - npm-install:
+    - script:
 
       name: install npm dependenies
       cwd: $WERCKER_ROOT/var/www
