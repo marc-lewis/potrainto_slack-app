@@ -1,55 +1,13 @@
-build:
+test:
 
-  box:
-
-    id: marclewis/ubuntu_nginx_node
-    username: $DOCKER_HUB_USERNAME
-    password: $DOCKER_HUB_PASSWORD
-    tag: latest
+  box: node
 
 #   Any Connected containers
 #  services:
 #    - mongodb
-#    - nginx
 
   steps:
 
-    - script:
+      - npm-install:
 
-      name: Remove the default Nginx configuration file
-      code: rm -v /etc/nginx/nginx.conf
-
-    - script:
-
-      name: Add the correct Nginx configuration file
-      code: cp nginx.conf /etc/nginx/
-
-    - script:
-
-      name: Add the app to /var/www for nginx
-      code: cp -r ./app/* /var/www/
-
-    - script:
-
-      name: install npm dependenies
-      code: cd /var/www && npm install
-
-    - script:
-
-      name: Install pm2 globally
-      code: npm install pm2 -g
-
-
-
-push:
-
-  steps:
-
-    - internal/docker-push:
-
-      username: $DOCKER_HUB_USERNAME
-      password: $DOCKER_HUB_PASSWORD
-      tag: latest
-      repository: marclewis/potrainto
-      registry: https://registry.hub.docker.com
-
+        cwd: ./app
