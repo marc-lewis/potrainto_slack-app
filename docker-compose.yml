@@ -1,14 +1,19 @@
-web:
-  build: ./app
-  ports:
-    - "1337"
-  volumes:
-    - ./app:/app
+version: "3"
+services:
+  app:
+    build:
+      context: ./app
+    ports:
+      - "1337"
+    volumes:
+      - ./app:/usr/src/app
+    command: pm2 start /usr/src/app/processes.json --no-daemon
 
-nginx:
-  build: ./nginx
-  ports:
-    - "80:80"
-  links:
-    - web
-  command: nginx -g 'daemon off;'
+  nginx:
+    build:
+      context: ./nginx
+    ports:
+      - "80:80"
+    links:
+      - app
+    command: nginx -g 'daemon off;'
