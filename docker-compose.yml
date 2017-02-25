@@ -1,6 +1,14 @@
-potrainto:
-  build: .
+web:
+  build: ./app
+  ports:
+    - "1337"
+  volumes:
+    - ./app:/app
+
+nginx:
+  build: ./nginx
   ports:
     - "80:80"
-  volumes:
-    - ./app:/var/www
+  links:
+    - web
+  command: nginx -g 'daemon off;'
