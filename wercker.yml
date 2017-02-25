@@ -41,13 +41,15 @@ build:
 
 
 
-deploy:
+push:
 
-  dockerhub:
+  steps:
 
     - internal/docker-push:
 
       username: $DOCKER_HUB_USERNAME
       password: $DOCKER_HUB_PASSWORD
+      tag: latest
       repository: marclewis/potrainto
+      registry: https://registry.hub.docker.com
 
