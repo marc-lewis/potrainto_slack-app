@@ -22,17 +22,17 @@ build:
     - script:
 
       name: Add the correct Nginx configuration file
-      code: cp nginx.conf $WERCKER_OUTPUT_DIR/etc/nginx/
+      code: cp nginx.conf /etc/nginx/ && cat /etc/nginx/nginx.conf
 
     - script:
 
       name: Add the app to /var/www for nginx
-      code: cp -r ./app/* $WERCKER_OUTPUT_DIR/var/www/
+      code: cp -r ./app/* /var/www/
 
     - script:
 
       name: install npm dependenies
-      code: cd $WERCKER_OUTPUT_DIR/var/www && npm install
+      code: cd /var/www && npm install
 
     - script:
 
