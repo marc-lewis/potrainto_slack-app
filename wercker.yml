@@ -22,7 +22,7 @@ build:
     - script:
 
       name: Add the correct Nginx configuration file
-      code: cp nginx.conf /etc/nginx/ && cat /etc/nginx/nginx.conf
+      code: cp nginx.conf /etc/nginx/
 
     - script:
 
