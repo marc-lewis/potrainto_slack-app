@@ -2,7 +2,7 @@
 
 http://potrainto.win
 
-Potrainto is a fun Internet of Shit application. It's a hacked Brio train which uses an Arduino Mega to connect to the wifi, play sounds, and manage the motors. A node server integrates into your slack team to receive commands, play jokes on employees, and manage the potrainto. It uses a mongoDB and queue system to manage orders. It's easily configurable if you have a poke around. It should be well commented and tested if you want to extend it.
+Potrainto is a fun Internet of Shit application that started out as a potato joke. It's a hacked Brio train which uses an Arduino Mega to connect to the wifi, play sounds, and manage the motors. A node server integrates into your slack team to receive commands, play jokes on employees, and manage the potrainto. It uses a mongoDB and queue system to manage orders. It's easily configurable if you have a poke around. It should be well commented and tested if you want to extend it.
 
 # TOC
 
@@ -48,10 +48,10 @@ Good luck!
 
 # Todo
 
-- Build process
-- Server set up
+- Set up polymer & tests
+- Set up Express & tests
+- BUILD the potrainto
+- Template Caching & nginx for static files
+- Server set up & CD with Wercker
 - SSL
-- Caching
-- CI / CD
-- Linting integration for CI
-- BUILD POTRAINTO AND ASSESS MVP + MILESTONES
+- Set up Ansible with Rundeck for server orchestration
