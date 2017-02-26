@@ -10,6 +10,14 @@ Potrainto is a fun Internet of Shit application that started out as a potato jok
 
 Clone the repo and have a laugh at the code and associated tests. Run `docker-compose up` and head to `localhost` when you start getting really into it and you're thinking about actually trying to get something to work or you want to steal the slack integration stuff for your own botz.
 
+# Testing with slack
+
+If you want to run this with slack then you need to create an app on slack for your new flavour of potrainto (sweet/baked/mashed potrainto) at https://api.slack.com/apps. Potrainto uses OAuth to integrate into your slack team, but this can be tricky when testing locally as you don't have a server on the web. However, ngrok works as a proxy for local testing!
+
+The route to handle OAuth is `/auth`. When you place a redirect for the slack app button on the 'OAuth & permissions' of your app remember to place `/auth` as the path afterwards, for example: `https://xxxxx.eu.ngrok.io/auth`.
+
+Next, you need to set up your slash commands to hit the same ngrok tunnel but with the `/slack` path: `https://xxxxx.eu.ngrok.io/slack` - and you should be good to go!
+
 ## Building Potrainto
 
 You need:
