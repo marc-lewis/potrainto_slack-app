@@ -43,6 +43,8 @@ app.use('/auth', auth);
 const slack = require('./controllers/slack/index');
 app.use('/slack', slack);
 
+// start jagmit
+const jagmit = require('./controllers/jagmit');
 
 /**
  * Listen on w/e port
